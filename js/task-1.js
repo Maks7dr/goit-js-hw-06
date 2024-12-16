@@ -1,14 +1,34 @@
-function makeTransaction(quantity, pricePerDroid, customerCredits) {
-  let totalPriceDroid = quantity * pricePerDroid;
-  if (totalPriceDroid <= customerCredits) {
-    return `You ordered ${quantity} droids worth ${totalPriceDroid} credits!`;
-  } else {
-    return `Insufficient funds!`;
+class Car {
+  #brand;
+  #model;
+  #price;
+  constructor(params) {
+    this.#brand = params.brand;
+    this.#model = params.model;
+    this.#price = params.price;
+  }
+
+  get brand() {
+    return this.#brand;
+  }
+
+  set brand(newBrand) {
+    this.#brand = newBrand;
+  }
+
+  get model() {
+    return this.#model;
+  }
+
+  set model(newModel) {
+    this.#model = newModel;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    this.#price = newPrice;
   }
 }
-
-console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
-console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
-console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"

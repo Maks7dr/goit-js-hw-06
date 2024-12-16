@@ -3,11 +3,239 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework-js3</title>
-    <script src="./js/task-1.js"></script>
-    <script src="./js/task-2.js"></script>
-    <script src="./js/task-3.js"></script>
-    <script src="./js/task-4.js"></script>
+    <meta name="description" content="Organic vegetables to your diet today" />
+    <meta name="keywords" content="Organic vegetables" />
+    <title>Green Harvest</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Preload image -->
+    <link rel="preload" as="image" href="./img/hero/img-mob@1x.png" />
+    <link rel="preload" as="image" href="./img/hero/img-desk@1x.png" />
+    <!-- Preload Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap"
+    />
+    <!-- Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- <div class="mobile-menu is-open">
+      <div class="mobile-menu-container">
+        <button class="mobile-btn-close" type="button">
+          <svg class="mobile-close-icon" width="32" height="32">
+            <use href="../img/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <nav class="mobile-menu-nav">
+          <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+              <a class="mobile-nav-link" href="#how-it-works">How It Works</a>
+            </li>
+            <li class="mobile-nav-item">
+              <a class="mobile-nav-link" href="#vegetables">Vegetables</a>
+            </li>
+            <li class="mobile-nav-item">
+              <a class="mobile-nav-link" href="#reviews">Reviews</a>
+            </li>
+          </ul>
+          <a class="mobile-shop-link" href="#your-order">Shop now</a>
+        </nav>
+      </div>
+    </div>
+    <header class="page-header" id="home">
+      <div class="container header-container">
+        <nav class="nav-header">
+          <a class="logo header-logo" href="./index.html">
+            <svg class="logo-first" width="216" height="20">
+              <use href="./img/sprite.svg#logo"></use>
+            </svg>
+          </a>
+          <div class="header-wrap">
+            <button class="btn btn-works" type="button">How It Works</button>
+            <button class="btn btn-veg" type="button">Vegetables</button>
+            <button class="btn btn-rev" type="button">Reviews</button>
+          </div>
+          <button class="btn btn-header" type="button">Shop now</button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section-hero">
+      <div class="container hero-container">
+        <h1 class="hero-title title">organic vegetables to your diet today!</h1>
+        <p class="hero-text">
+          Our expertly curated vegetable baskets are made with the
+          freshest,&nbsp;highest quality vegetables available. Fresh Harvest Box
+          has got you covered. Fresh, high-quality vegetables in expertly
+          curated vegetable baskets delivered to you.
+        </p>
+      </div>
+    </section>
+    <section id="reviews" class="reviews-js section">
+      <div class="reviews-js-container container">
+        <h2 class="reviews-js-title title">
+          reviews from our <span class="reviews-js-title-green">customers</span>
+        </h2>
+        <p class="reviews-js-subtitle">
+          Words of our customers: impressions and opinions about the quality of
+          our services and the freshness of our products.
+        </p>
+        <ul class="reviews-js-list">
+          <li class="reviews-js-item">
+            <img
+              srcset="img/reviews/john@1x.png 1x, img/reviews/john@2x.png 2x"
+              src="img/reviews/john@1x.png"
+              alt="John Wax"
+              width="56"
+              height="56"
+              class="reviews-js-img"
+            />
+            <h3 class="reviews-js-caption">John Wax</h3>
+            <p class="reviews-js-text">
+              These vegetables are my secret to delicious and healthy meals. The
+              quality is always at the highest level, the aroma and taste are
+              enchanting. I advise every fan of real products!
+            </p>
+          </li>
+          <li class="reviews-js-item">
+            <img
+              srcset="
+                img/reviews/viktoriia@1x.png 1x,
+                img/reviews/viktoriia@2x.png 2x
+              "
+              src="img/reviews/viktoriia@1x.png"
+              alt="Victoria Romashenko"
+              width="56"
+              height="56"
+              class="reviews-js-img"
+            />
+            <h3 class="reviews-js-caption">Victoria Romashenko</h3>
+            <p class="reviews-js-text">
+              I love how fast and fresh the vegetables are delivered. Salads
+              always turn out so appetizing, and soups are real masterpieces.
+              The quality is impeccable!
+            </p>
+          </li>
+          <li class="reviews-js-item">
+            <img
+              srcset="img/reviews/ihor@1x.png 1x, img/reviews/ihor@2x.png 2x"
+              src="img/reviews/ihor@1x.png"
+              alt="Ihor Trachuk"
+              width="56"
+              height="56"
+              class="reviews-js-img"
+            />
+            <h3 class="reviews-js-caption">Ihor Trachuk</h3>
+            <p class="reviews-js-text">
+              Recently tried my fresh tomatoes and peppers - amazing! The
+              authenticity of the taste, as if from the garden directly to my
+              table. It is now my main vegetable supplier.
+            </p>
+          </li>
+        </ul>
+        <div class="reviews-js-dots">
+          <button class="dot" data-slide="1" aria-label="Slider dot"></button>
+          <button class="dot" data-slide="2" aria-label="Slider dot"></button>
+          <button class="dot" data-slide="3" aria-label="Slider dot"></button>
+        </div>
+      </div>
+    </section> -->
+    <!-- Reviews-js -->
+    <!-- Reviews-js -->
+    <section id="reviews" class="reviews-js section">
+      <div class="reviews-js-container container">
+        <h2 class="reviews-js-title title">
+          reviews from our <span class="reviews-js-title-green">customers</span>
+        </h2>
+        <p class="reviews-js-subtitle">
+          Words of our customers: impressions and opinions about the quality of
+          our services and the freshness of our products.
+        </p>
+
+        <!-- Контейнер Swiper -->
+        <div class="swiper reviews-swiper">
+          <div class="swiper-wrapper reviews-js-list">
+            <div class="swiper-slide reviews-js-item">
+              <img
+                srcset="img/reviews/john@1x.png 1x, img/reviews/john@2x.png 2x"
+                src="img/reviews/john@1x.png"
+                alt="John Wax"
+                width="56"
+                height="56"
+                class="reviews-js-img"
+              />
+              <h3 class="reviews-js-caption">John Wax</h3>
+              <p class="reviews-js-text">
+                These vegetables are my secret to delicious and healthy meals.
+                The quality is always at the highest level, the aroma and taste
+                are enchanting. I advise every fan of real products!
+              </p>
+            </div>
+            <div class="swiper-slide reviews-js-item">
+              <img
+                srcset="
+                  img/reviews/viktoriia@1x.png 1x,
+                  img/reviews/viktoriia@2x.png 2x
+                "
+                src="img/reviews/viktoriia@1x.png"
+                alt="Victoria Romashenko"
+                width="56"
+                height="56"
+                class="reviews-js-img"
+              />
+              <h3 class="reviews-js-caption">Victoria Romashenko</h3>
+              <p class="reviews-js-text">
+                I love how fast and fresh the vegetables are delivered. Salads
+                always turn out so appetizing, and soups are real masterpieces.
+                The quality is impeccable!
+              </p>
+            </div>
+            <div class="swiper-slide reviews-js-item">
+              <img
+                srcset="img/reviews/ihor@1x.png 1x, img/reviews/ihor@2x.png 2x"
+                src="img/reviews/ihor@1x.png"
+                alt="Ihor Trachuk"
+                width="56"
+                height="56"
+                class="reviews-js-img"
+              />
+              <h3 class="reviews-js-caption">Ihor Trachuk</h3>
+              <p class="reviews-js-text">
+                Recently tried my fresh tomatoes and peppers - amazing! The
+                authenticity of the taste, as if from the garden directly to my
+                table. It is now my main vegetable supplier.
+              </p>
+            </div>
+          </div>
+
+          <!-- Пагінація для мобільного -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="./js/task-3.js"></script>
+  </body>
 </html>

@@ -1,16 +1,25 @@
-function checkForSpam(message) {
-  let messageNew = message.toLowerCase();
-  if (messageNew.includes('spam') || messageNew.includes('sale')) {
-    return 'true';
-  } else {
-    return 'false';
-  }
-}
+document.addEventListener('DOMContentLoaded', () => {
+  let swiper;
 
-console.log(checkForSpam('Latest technology news')); // false
-console.log(checkForSpam('JavaScript weekly newsletter')); // false
-console.log(checkForSpam('Get best sale offers now!')); // true
-console.log(checkForSpam('Amazing SalE, only tonight!')); // true
-console.log(checkForSpam('Trust me, this is not a spam message')); // true
-console.log(checkForSpam('Get rid of sPaM emails. Our book in on sale!')); // true
-console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+  function initSwiper() {
+    if (window.innerWidth < 1280 && !swiper) {
+      swiper = new Swiper('.reviews-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    } else if (window.innerWidth >= 1280 && swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  }
+
+  // Ініціалізація слайдера при завантаженні сторінки
+  initSwiper();
+
+  // Динамічна перевірка розміру вікна
+  window.addEventListener('resize', initSwiper);
+});
