@@ -1,25 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let swiper;
-
-  function initSwiper() {
-    if (window.innerWidth < 1280 && !swiper) {
-      swiper = new Swiper('.reviews-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 16,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      });
-    } else if (window.innerWidth >= 1280 && swiper) {
-      swiper.destroy(true, true);
-      swiper = null;
-    }
-  }
-
-  // Ініціалізація слайдера при завантаженні сторінки
-  initSwiper();
-
-  // Динамічна перевірка розміру вікна
-  window.addEventListener('resize', initSwiper);
+  const swiper = new Swiper('.reviews-swiper', {
+    slidesPerView: 1, // За замовчуванням 1 картка
+    spaceBetween: 16, // Відстань між картками
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2, // На планшетах показувати 2 картки
+        spaceBetween: 24,
+      },
+      1280: {
+        slidesPerView: 3, // На десктопі показувати всі 3 картки
+        spaceBetween: 32,
+        enabled: false, // Вимикаємо слайдер
+      },
+    },
+  });
 });

@@ -652,9 +652,9 @@ body {
 
 .swiper-slide {
   flex-shrink: 0;
-  width: 100%; /* Кожен слайд займає 100% ширини */
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* #endregion */
